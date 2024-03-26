@@ -9,12 +9,12 @@
 ## Table of Contents
 
 - [Pre-requisites](#pre-requisites) 🛠️
-- [What is a Modifier?](#what-is-a-modifier-) 🛑
-  - [Syntax](#syntax-) 💻
-  - [Code Example](#code-example-) 📝
-- [What is a Map?](#what-is-a-map-) 🗺️
-  - [Syntax](#syntax-) 💻
-  - [Code Example](#code-example-) 📝
+- [What is a Modifier?](#what-is-a-modifier-)
+  - [Syntax](#syntax-) 
+  - [Code Example](#code-example-) 
+- [What is a Map?](#what-is-a-map-) 
+  - [Syntax](#syntax-) 
+  - [Code Example](#code-example-) 
 - [Let's create one voting contract to use the above one in real life.](#lets-create-one-voting-contract-to-use-the-above-one-in-real-life-) 🗳️
 
 
