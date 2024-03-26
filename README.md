@@ -103,6 +103,11 @@ contract Example {
 
 ## Let's  create one voting contract to  use the above one  in real life. 
 
+**Frotned Demo + Smart contract**
+
+![Bennet - Made with Clipchamp](https://github.com/Vikash-8090-Yadav/OpenBuild-X-Bennet/assets/85225156/7066ddae-edb0-409a-a1f9-fad2fcbb7e21)
+
+
 
 ```
     // SPDX-License-Identifier: GPL-3.0
@@ -174,3 +179,12 @@ contract Example {
     
     }
 ```
+
+## Task
+
+Create a frontend for this smart contract,  share  on twitter and do tag  OpenBuild https://twitter.com/OpenBuildxyz & me https://twitter.com/Vikash_8090_b fro the amazing swags!. 
+
+
+If u like this repo then show some ❤️ by giving ⭐ to this .
+
+
