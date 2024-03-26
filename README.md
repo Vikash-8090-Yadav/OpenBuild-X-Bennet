@@ -105,7 +105,12 @@ contract Example {
 
 **Frotned Demo + Smart contract**
 
-![Bennet - Made with Clipchamp](https://github.com/Vikash-8090-Yadav/OpenBuild-X-Bennet/assets/85225156/7066ddae-edb0-409a-a1f9-fad2fcbb7e21)
+
+
+
+https://github.com/Vikash-8090-Yadav/OpenBuild-X-Bennet/assets/85225156/2681b4c9-7632-4ac5-b9f1-ca8ccb814019
+
+
 
 
 
