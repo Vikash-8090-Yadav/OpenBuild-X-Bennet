@@ -14,6 +14,8 @@
 - Remix ide already setup
 
 
+**Open the renix: https://remix.ethereum.org/**
+
 #  What is modifier ?
 
 
