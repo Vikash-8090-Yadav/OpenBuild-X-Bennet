@@ -74,7 +74,7 @@ Benifiets: Eventa saves lots of gas fees!!
 
  ### Code 
 
- `
+ ```
  
 
 // SPDX-License-Identifier: MIT
@@ -130,6 +130,7 @@ contract Test {
     }
 
 }
+```
 
 # What is abi.encodePacked and it's functionality,
 
@@ -140,7 +141,8 @@ For ex, Imagine you have some items, like apples and oranges, and you want to pa
 
  ### code 
 
-`
+```
+
 pragma solidity ^0.8.0;
 
 contract ExampleContract {
@@ -151,10 +153,10 @@ contract ExampleContract {
     }
 }
 
-`
+```
 
 
- `
+ 
 
     
 # What is  map?
