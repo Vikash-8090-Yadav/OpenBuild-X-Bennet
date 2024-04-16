@@ -62,6 +62,100 @@
     }
 
   ```
+
+#  What is Event ?
+
+Events are like announcements inside a smart contract. for ex, f someone buys an item in a marketplace contract, an event can be triggered to let everyone know that the purchase took place.
+
+Inexed: Indexed parameters are like tags that make events easier to find later. for ex,  If you have a big list of events, and you want to find all the events related to a specific person. If you index the parameter for that person's address, it's like putting a label on those events so you can quickly find them later.
+
+
+Benifiets: Eventa saves lots of gas fees!!
+
+ ### Code 
+
+ `
+ 
+
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.10;
+
+
+contract Test {
+
+
+    event Donation(address indexed from, string name, string message, uint256 timestamp, uint256 amount);
+
+     constructor() {
+        Rowner = payable(msg.sender);
+    }
+
+    struct Memo {
+        string name;
+        string message;
+        uint timestamp;
+        address from;
+    }
+
+    Memo[] memos;
+    address payable public Rowner;
+
+    struct MarketItem {
+        uint256 tokenId;
+        address payable seller;
+        address payable owner;
+        uint256 price;
+        bool sold;
+    }
+
+    
+
+    function buyChai(string memory name, string memory message) public payable {
+        require(msg.value > 0, "Please pay something greater than 0");
+        Rowner.transfer(msg.value); // Will transfer donator's money to the smart contract owner
+        memos.push(Memo(name, message, block.timestamp, msg.sender)); // Now we will add that donator to our donators list
+
+        // Emit the Donation event
+        emit Donation(msg.sender, name, message,  block.timestamp, msg.value);
+        
+    }
+
+    // You can get a list of all donators and the total holdings of funds by this function on the frontend
+    function getMemos() public view returns (Memo[] memory) {
+        return memos;
+    }
+
+    function getBalance() public view returns (uint256) {
+        return Rowner.balance;
+    }
+
+}
+
+# What is abi.encodePacked and it's functionality,
+
+abi.encodePacked is a function in Solidity that packs together different types of data.
+It takes whatever you give it—numbers, text, or even addresses—and combines them into a single packed result.
+
+For ex, Imagine you have some items, like apples and oranges, and you want to pack them into a box. But the box can only hold one type of thing. If you try to put both apples and oranges in the same box, they might get mixed up. abi.encodePacked solves this problem by packing everything together in a way that keeps them separate.
+
+ ### code 
+
+`
+pragma solidity ^0.8.0;
+
+contract ExampleContract {
+    function combineData(uint256 number, address addr, string memory text) public pure returns (bytes memory) {
+        // Pack the data together using abi.encodePacked
+        bytes memory packedData = abi.encodePacked(number, addr, text);
+        return packedData;
+    }
+}
+
+`
+
+
+ `
+
     
 # What is  map?
 
@@ -108,82 +202,8 @@ contract Example {
 
 
 
-https://github.com/Vikash-8090-Yadav/OpenBuild-X-Bennet/assets/85225156/2681b4c9-7632-4ac5-b9f1-ca8ccb814019
 
 
-
-
-
-```
-    // SPDX-License-Identifier: GPL-3.0
-    
-    pragma solidity >=0.7.0 <0.9.0;
-    
-    contract vote{
-        string public winner;
-        address public  participant1 =0xa6B91Ab24F8D976A5f2119f5Dd7ed8886f8b2C03; // Any  person address
-        address public  participant2 = 0x7719E64418C13c3Ab97e6f8500E81ce1101e8C40; // Any peron address
-        mapping(address=>uint) user; // it's used to store the number of vote per address
-        mapping(address=>bool) chek; // it's used to check wether the particular address already voted or not 
-    
-        address public owner; // Address of the owner
-        constructor(){
-            owner = msg.sender;
-        }
-    // creation of the  modifier 
-
-        modifier onlyonwner(){
-            require(msg.sender == owner,"You are not allowed to declare the result");
-            _;
-        }
-
-        // two candidate created named participant1_vote and participant2_vote, user have to vote to them. 
-    
-        function participant1_vote()  public {
-            require(msg.sender !=participant1,"You can not vote to yourself"); // candidate can't vote to themselves
-            require(chek[msg.sender]!=true,"You have already voted"); // voters can't vote twice
-            user[participant1]++;  // vote  count increases per address 
-            chek[msg.sender] = true; // check 
-        }
-            function participant2_vote()  public {
-            require(msg.sender !=participant2,"You can not vote to yourself");
-            require(chek[msg.sender]!=true,"You have already voted");
-            user[participant2]+=1;
-            chek[msg.sender] = true;
-        }
-
-        // anyonce can check the no of vote  particular candidate got
-    
-        function pati1_cnt_VOTE() view public  returns(uint){
-            return user[participant1];
-    
-        }
-    
-        function pati2_cnt_VOTE() view public  returns(uint){
-            return user[participant2];
-    
-        }
-    // only owner can declare the winner 
-    
-        function declare_winner()  public  onlyonwner {
-            if(user[participant1]>user[participant2]){
-                winner = "Candidate 1 is winner";
-                // winner = _winner;
-            }
-            else if(user[participant1]==user[participant2]){
-                winner = "Draw";
-                // winner = _winner;
-    
-            }
-            else{
-                winner = "Candidate 2 is winner";
-                // winner = _winner;
-    
-            }
-        }
-    
-    }
-```
 
 ## Task
 
