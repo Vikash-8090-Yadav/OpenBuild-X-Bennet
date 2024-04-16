@@ -156,9 +156,43 @@ contract ExampleContract {
 ```
 
 
- 
+ # what is keccak256:
+keccak256 is a cryptographic hash function used to generate a unique 256-bit (32-byte) hash value from input data. 
+It's commonly used for various purposes like creating unique identifiers, securely storing passwords, or verifying data integrity.
 
+### Code 
+
+`
+function calculateHash(string memory data) public pure returns(bytes32) {
+        // Calculate the keccak256 hash of the input data
+        return keccak256(abi.encodePacked(data));
+    }
+`
+calculateHash function takes a string data as input, encodes it using abi.encodePacked, and then computes the keccak256 hash of the encoded data.
     
+
+
+## Comparision b/w Keecak25 and SHA 256 
+
+keccak256 and SHA256 are both ways to crunch data down into a fixed-size string of numbers and letters, making it hard to reverse-engineer the original data. They're like magic boxes that take your data and turn it into a secret code.
+
+| S No. | SHA-256                                          | Keccak-256                                                        |
+|-------|--------------------------------------------------|-------------------------------------------------------------------|
+| 1.    | SHA-256 is the implementation of the SHA-2       | Keccak256, a cryptographic function, is part of Solidity          |
+|       | standard with a 256 bits key.                    | (SHA-3 Family).                                                   |
+| 2.    | SHA-256 is weaker than Keccak-256.               | Keccak-256 is much stronger compared to SHA-256.                  |
+| 3.    | Computes the SHA-256 hash of the input.          | Computes the Keccak-256 hash of the input.                        |
+| 4.    | sha256(bytes memory) returns (bytes32).          | keccak256(bytes memory) returns (bytes32).                        |
+| 5.    | The Bitcoin blockchain makes extensive use of    | Ethereum uses Keccak-256 in a consensus engine called Ethash.      |
+|       | SHA-256, including when identifying transaction  |                                                                   |
+|       | hashes and when miners are performing proof-of-  |                                                                   |
+|       | work mining.                                     |                                                                   |
+
+
+**Both boxes do the same job — turning data into secret codes — but they use different tricks to do it.**
+
+Explore sha256 and keeckak256 in depth here: https://cryptobook.nakov.com/cryptographic-hash-functions/secure-hash-algorithms
+
 # What is  map?
 
  - Map are a key-value store where you can associate a value with a specific key.
@@ -191,25 +225,6 @@ contract Example {
 ```
 
 
-
-
- Here we have add a modifier called onlyowner , so now only the owner can access it otherwise it will through an error.
-
- 
-
-## Let's  create one voting contract to  use the above one  in real life. 
-
-**Frotned Demo + Smart contract**
-
-
-
-
-
-
-
-## Task
-
-Create a frontend for this smart contract,  share  on twitter and do tag  OpenBuild https://twitter.com/OpenBuildxyz & me https://twitter.com/Vikash_8090_b fro the amazing swags!. 
 
 
 If u like this repo then show some ❤️ by giving ⭐ to this .
